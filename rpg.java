@@ -1,3 +1,12 @@
+//Main class to run the program 
+public class rpg {
+  //Main Method
+  public static void main(String[] args) {
+    
+  }
+}
+
+
 
 //Class to hold all similar attributes
 class Object {
@@ -34,11 +43,19 @@ class Object {
   }
 }
 
+//Weapon class, which inherits the Object class
 class Weapon extends Object {
+  
+  //Private variable to set the damage, only weapons have damage
   private int damage;
   
+  //Returns the damage of the weapon
   public int getDamage() {
     return damage;
+  }
+  
+  public void setDamage(int damage) {
+    this.damage = damage;
   }
 }
 
@@ -67,10 +84,4 @@ class Food extends Object {
   }
 }
   
-public class rpg {
-  public static void main(String[] args) {
-    
-    
-  }
-}
 

@@ -4,48 +4,73 @@ public class rpg {
 //Main Method
   public static void main(String[] args) {
     
-    //Declaring new item
-    Item bread = new Item();
+/*-------BASIC ITEM TEST-------*/
+    
+    //Declaring new 'Item'
+    Item gem = new Item();
     
     //Set the name and weight of the new item
-    bread.setName("Rye");
-    bread.setWeight(2);
+    gem.setName("Emerald");
+    gem.setWeight(2);
     
-    //bread.setStats("Rye", 2);
-    System.out.println(bread.examine());
+    //Examines the 'gem' item, displaying all relevant stats
+    System.out.println(gem.examine());
+
+/*-------WEAPON TEST-------*/
     
+    //Declaring new 'Weapon'
     Weapon sword = new Weapon();
     
+    //Initializing all statsof the 'Weapon' (name, weight, damage)
     sword.setName("Excalibur");
     sword.setWeight(10);
     sword.setDamage(10);
-    
+
+    //Examines the 'Weapon' item, displaying all relevant information
     System.out.println(sword.examine());
     
-    //Declaring new food
+/*-------ARMOR TEST-------*/
+    
+    //Declaring new 'Armor'
+    Armor shield = new Armor();
+    
+    //Initializing all stats of the 'Armor' (name, weight, defense)
+    shield.setName("Iron Shield");
+    shield.setWeight(10);
+    shield.setDefense(10);
+
+    //Examines the 'Armor' item, displaying all relevant information
+    System.out.println(shield.examine());
+    
+/*-------FOOD TEST-------*/
+    
+    //Declaring new 'Food'
     Food cake = new Food();
     
+    //Initializing all stats of the 'Food' (name, weight, nutrition, quantity)
     cake.setName("Cake");
     cake.setWeight(2);
     cake.setQuantity(4);
     cake.setNutrition(4);
     
+    //Examines the 'Food' item, displaying all relevant information
     System.out.println(cake.examine());
     
 
   }
 }
 
-//Class to hold all similar attributes
+/*-------MAIN ITEM CLASS-------*/
+
 class Item {
   
-//Every object has a name
+  //Declaring a name for every 'Item'
   public String name;
   
-//Every object has a weight
+  //Declaring a weight for every 'Item'
   public int weight;
   
-//Returns the name of the object
+  //Returns the name of the 'Item'
   public String getName() {
     
     return name;
@@ -84,7 +109,7 @@ class Item {
   */
   public String examine() {
     
-    return String.format("Name: %1$s\nWeight: %2$d kg", name, weight);
+    return String.format("---Item---\nName: %1$s\nWeight: %2$d kg\n", name, weight);
   
   }
 
@@ -111,7 +136,7 @@ class Weapon extends Item {
   */
   public String examine() {
     
-    return String.format("Name: %1$s\nWeight: %2$d kg\nDamage: %3$d", name, weight, damage);
+    return String.format("---Weapon---\nName: %1$s\nWeight: %2$d kg\nDamage: %3$d\n", name, weight, damage);
   
   } 
 }
@@ -135,7 +160,7 @@ class Armor extends Item {
 //Displays all armor stats (name, weight, defense)  
   public String examine() {
     
-    return String.format("Name: %1$s\nWeight: %2$d kg\nDefense: %3$d", name, weight, defense);
+    return String.format("---Armor---\nName: %1$s\nWeight: %2$d kg\nDefense: %3$d\n", name, weight, defense);
   
   } 
 }
@@ -180,7 +205,7 @@ class Food extends Item {
 //Lists all of the details for the food
   public String examine() {
     
-    return String.format("Name: %1$s\nWeight: %2$d kg\nNutrition: %3$d\nQuantity: %4$d", name, weight, nutrition, quantity);
+    return String.format("---Food---\nName: %1$s\nWeight: %2$d kg\nNutrition: %3$d\nQuantity: %4$d\n", name, weight, nutrition, quantity);
   
   } 
 }

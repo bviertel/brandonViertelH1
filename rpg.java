@@ -7,14 +7,22 @@ public class rpg {
 /*-------BASIC ITEM TEST-------*/
     
     //Declaring new 'Item'
-    Item gem = new Item();
+    Item gem1 = new Item();
     
     //Set the name and weight of the new item
-    gem.setName("Emerald");
-    gem.setWeight(2);
+    gem1.setName("Emerald");
+    gem1.setWeight(2);
     
     //Examines the 'gem' item, displaying all relevant stats
-    System.out.println(gem.examine());
+    System.out.println(gem1.examine());
+    
+    /*---MULTI SET BASIC ITEM TEST---*/
+    
+    Item gem2 = new Item();
+    
+    gem2.setStats("Opal", 6);
+    
+    System.out.println(gem2.examine());
 
 /*-------WEAPON TEST-------*/
     
@@ -29,6 +37,14 @@ public class rpg {
     //Examines the 'Weapon' item, displaying all relevant information
     System.out.println(sword.examine());
     
+    /*---MULTI SET WEAPON TEST---*/
+    
+    Weapon hammer = new Weapon();
+    
+    hammer.setStats("Thor", 6, 10000);
+    
+    System.out.println(hammer.examine());
+    
 /*-------ARMOR TEST-------*/
     
     //Declaring new 'Armor'
@@ -41,6 +57,14 @@ public class rpg {
 
     //Examines the 'Armor' item, displaying all relevant information
     System.out.println(shield.examine());
+    
+    /*---MULTI SET ARMOR TEST---*/
+    
+    Armor legPlate = new Armor();
+    
+    legPlate.setStats("Leg Plate", 4, 20);
+    
+    System.out.println(legPlate.examine());
     
 /*-------FOOD TEST-------*/
     
@@ -56,6 +80,13 @@ public class rpg {
     //Examines the 'Food' item, displaying all relevant information
     System.out.println(cake.examine());
     
+    /*---MULTI SET FOOD TEST---*/
+    
+    Food taco = new Food();
+    
+    taco.setStats("Taco", 1, 6, 3);
+    
+    System.out.println(taco.examine());
 
   }
 }
@@ -138,6 +169,16 @@ class Weapon extends Item {
   
   }
   
+  //Personal Experimentation with setting the name, weight, and damage through one method
+  //..Does work
+  public void setStats(String name, int weight, int damage) {
+    
+    this.name = name;
+    this.weight = weight;
+    this.damage = damage;
+  
+  }
+  
   //Returns the name, weight, and damage of the 'Weapon' in form of String
   public String examine() {
     
@@ -167,6 +208,16 @@ class Armor extends Item {
     this.defense = defense;
   
   }
+  
+  //Personal Experimentation with setting the name, weight, and defense through one method
+  //..Does work
+  public void setStats(String name, int weight, int defense) {
+    
+    this.name = name;
+    this.weight = weight;
+    this.defense = defense;
+  
+  }
 
   //Returns the name, weight, and defense of the 'Armor' in form of String  
   public String examine() {
@@ -176,44 +227,57 @@ class Armor extends Item {
   } 
 }
 
-//Class for items of which are food
+/*-------FOOD CLASS------*/
+
+//Inherits from 'Item' class
 class Food extends Item {
   
-//Only food has nutrition
+  //Nutrition variable of 'Food'
   private int nutrition;
 
-//Only food has a quantity
+  //Quantity variable of 'Food'
   private int quantity;
   
-//Retieves the nutition value  
+  //Returns the nutition value  
   public int getNutrition() {
     
     return nutrition;
   
   }
   
-//Sets the nutrition value for the food item  
+  //Sets the nutrition value of the 'Food'  
   public void setNutrition(int nutrition) {
     
     this.nutrition = nutrition;
   
   }
 
-//Retrieves the quantity of the food
+  //Returns the quantity value of the 'Food'
   public int getQuantity() {
     
     return quantity;
   
   }
   
-//Sets the quantity of the food
+  //Sets a new quantity of the 'Food'
   public void setQuantity(int newQuantity) {
     
     this.quantity = newQuantity;
   
   }
+  
+  //Personal Experimentation with setting the name, weight, nutrition, and quantity through one method
+  //..Does work
+  public void setStats(String name, int weight, int nutrition, int quantity) {
+    
+    this.name = name;
+    this.weight = weight;
+    this.nutrition = nutrition;
+    this.quantity = quantity;
+  
+  }
 
-//Lists all of the details for the food
+  //Returns the name, weight, nutrition, and quantity of the 'Food' in form of String
   public String examine() {
     
     return String.format("---Food---\nName: %1$s\nWeight: %2$d kg\nNutrition: %3$d\nQuantity: %4$d\n", name, weight, nutrition, quantity);

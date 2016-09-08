@@ -77,21 +77,22 @@ class Item {
     
   }
   
-//Sets the name of the object when called
+  //Sets the name of the 'Item'
   public void setName(String name) {
     
     this.name = name;
   
   }
   
-//Returns the weight of the object
+  //Returns the weight of the 'Item'
   public int getWeight() {
     
     return weight;
   
   }
   
-//Experimenting with setting the name and weight through one method
+  //Personal Experimentation with setting the name and weight through one method
+  //..Does work
   public void setStats(String name, int weight) {
     
     this.name = name;
@@ -99,14 +100,14 @@ class Item {
   
   }
   
-  //Sets the weight of the object
+  //Sets the weight of the 'Item'
   public void setWeight(int weight) {
+    
     this.weight = weight;
+  
   }
   
-  /*Returns the name and weight of the object,
-  //which has been converted to a string
-  */
+  //Returns the name and weight of the 'Item' in form of String
   public String examine() {
     
     return String.format("---Item---\nName: %1$s\nWeight: %2$d kg\n", name, weight);
@@ -115,25 +116,29 @@ class Item {
 
 }
 
-//Weapon class, which inherits the Object class
+/*-------WEAPON CLASS-------*/
+
+//Inherits from the 'Item' class
 class Weapon extends Item {
   
-  //Private variable to set the damage, only weapons have damage
+  //Damage variable of a 'Weapon'
   private int damage;
   
-  //Returns the damage of the weapon
+  //Returns the damage of the 'Weapon'
   public int getDamage() {
+    
     return damage;
+  
   }
   
-  //Sets the damage of the weapon
+  //Sets the damage of a 'Weapon'
   public void setDamage(int damage) {
+    
     this.damage = damage;
+  
   }
   
-    /*Returns the name and weight of the object,
-  //which has been converted to a string
-  */
+  //Returns the name, weight, and damage of the 'Weapon' in form of String
   public String examine() {
     
     return String.format("---Weapon---\nName: %1$s\nWeight: %2$d kg\nDamage: %3$d\n", name, weight, damage);
@@ -141,23 +146,29 @@ class Weapon extends Item {
   } 
 }
 
-//Armor class
+/*-------ARMOR CLASS-------*/
+
+//Inherits from 'Item' class
 class Armor extends Item {
 
-//Private variable to set the defense, only armor has defense
+  //Defense variable of 'Armor'
   private int defense;
   
-//Returns the defense value
+  //Returns the defense value
   public int getDefense() {
+    
     return defense;
+  
   }
 
-//Sets the defense value of the armor  
+  //Sets the defense value of the 'Armor'  
   public void setDefense(int defense) {
+    
     this.defense = defense;
+  
   }
 
-//Displays all armor stats (name, weight, defense)  
+  //Returns the name, weight, and defense of the 'Armor' in form of String  
   public String examine() {
     
     return String.format("---Armor---\nName: %1$s\nWeight: %2$d kg\nDefense: %3$d\n", name, weight, defense);
